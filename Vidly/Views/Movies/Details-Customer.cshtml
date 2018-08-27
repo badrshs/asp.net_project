@@ -1,0 +1,49 @@
+﻿@model Vidly.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color: white">Details</h2>
+
+<div>
+    <h4 style="color: #cadfe4">Movie</h4>
+    <dl class="dl-horizontal">
+        <dd align="right">
+            <img src="@Html.DisplayFor(model => model.Image)" style="width: 287px;border:solid;border-color: black;height: 395px;margin-right: 719px;padding-right: 0px;margin-bottom: 52px;"/>
+        </dd>
+        <div class="marg" style="margin-left: 408px; top: -290px; position: relative ;font-size: 18px;">
+            <dt style="color: white;font-size:16px">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd style="color: black;font-size: 16px">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt style="color: white;font-size: 16px">
+                @Html.DisplayNameFor(model => model.GenreId)
+            </dt>
+
+            <dd style="color: black;font-size: 16px">
+                @Html.DisplayFor(model => model.Genre.Name)
+            </dd>
+
+            <dt style="color: white;font-size: 16px">
+              
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </dt>
+
+            <dd style="color: black;font-size: 16px">
+                @Html.DisplayFor(model => model.ReleaseDate)
+            </dd>
+
+        </div>
+    </dl>
+</div>
+<p>
+
+
+    <a href="/">Back to List</a>
+
+</p>

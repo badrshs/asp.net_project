@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<br> <br>
+<div class="body">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-xs-3 main">
+                        <div class="article " style="position:relative">
+                            <div class="box"></div>
+
+                            <a href='@Url.Action("Details", "Movies", new {id = item.Id})'>
+                                <img class="img" src="@Html.DisplayFor(modelItem => item.Image)" />
+                            </a>
+                        </div>
+
+                        <div class="details">
+                            <center>
+                                <a href='@Url.Action("Details", "Movies", new {id = item.Id})'>
+
+                                    <h2 style="font-style: italic">    @Html.DisplayFor(modelItem => item.Name)   </h2>
+
+                                </a>
+                            </center>
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <style>
+
+        .body {
+            background: transparent;
+            position: absolute;
+
+        }
+
+
+
+        .main.col-xs-3:hover {
+            background-color: #6b2425;
+            border-radius: 11px;
+            -ms-transform: scale(1.1); /* IE 9 */
+            -webkit-transform: scale(1.1); /* Safari 3-8 */
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+            
+
+            .main:hover h2 {
+                color: white
+            }
+
+
+
+        .img {
+            left: 5px;
+            border-radius: 11px;
+            background-color: #1b1a1aed;
+            width: 246px;
+            height: 331px;
+            margin: 0px auto;
+            padding: 15px 22px;
+            margin-bottom: 30px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .col-xs-3 {
+            border-radius: 2px;
+
+        }
+
+        .details h2 a {
+            color: #373737;
+            -o-text-overflow: ellipsis;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 195px;
+            display: block;
+            font-style: italic;
+        }
+       
+
+        .details a:hover {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .details h2:hover {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .details h2 {
+            font-family: serif;
+            color: black;
+            top: -11px;
+            font-size: 18px;
+            margin-bottom: 10px;
+
+        }
+
+        .boxx {
+            width: 100%;
+            height: 100%;
+            background-color:aliceblue;
+            position: absolute;
+            z-index: 100;
+            display: none;
+
+        }
+
+
+    </style>
